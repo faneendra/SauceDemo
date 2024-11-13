@@ -13,8 +13,8 @@ namespace SpecFlowProject1.StepDefinitions
             _loginPage = loginPage;
         }
 
-        [Given("I am on the SauceDemo login page")]
-        public void GivenIAmOnTheSauceDemoLoginPage()
+        [Given("I am on the login page")]
+        public void GivenIAmOnTheLoginPage()
         {
             _loginPage.NavigateToLoginPage();
         }
@@ -25,8 +25,8 @@ namespace SpecFlowProject1.StepDefinitions
             _loginPage.EnterCredentials("standard_user", "secret_sauce");
         }
 
-        [Then("I should be redirected to the products page")]
-        public void ThenIShouldBeRedirectedToTheProductsPage()
+        [Then("I should be redirected to the inventory page")]
+        public void ThenIShouldBeRedirectedToTheInventoryPage()
         {
             _loginPage.VerifySuccessfulLogin();
         }
