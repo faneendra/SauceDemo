@@ -26,9 +26,15 @@ namespace SauceDemoAutomation.POM
             _driver.FindElement(_loginButton).Click();
         }
 
-        public bool IsProductsPageDisplayed()
+        public void VerifySuccessfulLogin()
         {
-            return _driver.Url.Contains("inventory.html");
+            // This method should check for elements that are only visible after a successful login
+            // For example, checking for the presence of the inventory container
+            bool isLoggedIn = _driver.FindElement(By.Id("inventory_container")).Displayed;
+            if (!isLoggedIn)
+            {
+                throw new Exception("Login failed");
+            }
         }
     }
 }
